@@ -2,11 +2,10 @@ var anthem = ["United States Of America", "Yemen", "Zimbabwe", "Canada", "Bangla
 
 // document.querySelector('.hidden').innerHTML = anthem[1];
 
-var song = anthem[0];
-var dash = "-";
+var randomIndex = Math.floor(Math.random()*anthem.length)
+var song = anthem[randomIndex];
+var dash = "-".repeat(song.length);
 
-for (i = 0; i < song.length; i++){
-	i = "-"
-	document.querySelector(".hidden").innerHTML = dash += i + " ";
-	// console.log(dash += i + " ");
-}
+	document.querySelector(".hidden").innerHTML = dash;
+
+// console.log(randomIndex);
