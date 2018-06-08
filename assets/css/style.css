@@ -9,51 +9,72 @@ body {
 	background-position: fixed;
 }
 
+h2 {
+	color: #19cd1f;
+	font-size: 40px;
+}
+
 .title,
 .game {
 	text-align: center;
 	background-color: rgba(0,0,0,0.7);
 	border: solid #19c7cd 4px;
 	margin: auto;
-	margin-top: 30px;
+	margin-top: 15px;
 	color: #fff;
 }
 
 .title {
 	width: 65%;
-	height: 100px;
-	padding-top: 25px;
-	font-size: 80px;
+	height: 80px;
+	padding-top: 15px;
+	font-size: 70px;
 	font-family: 'Bungee', cursive;
 }
 
 .game {
-	width: 50%;
+	width: 55%;
 	border-radius: 10px;
-	height: 500px;
+	height: 600px;
 	font-family: 'Fugaz One', sans-serif;
 	font-size: 30px;
 }
 
-.wins,
-.remain,
-.guesses,
-.current {
-	padding: 0px 0px 100px 10px;
+.box,
+.end {
+	padding: 0px 0px 60px 10px;
 	margin: 20px;
+}
+
+.end {
+	clear: both;
 }
 
 .left,
 .right {
 	float: left;
 	text-align: left;
-	padding-right: 40px;
+	padding-right: 36px;
+}
+
+.hidden,
+.counter,
+.wins,
+.guesses {
+	padding-top: 10px;
+	font-family: 'Sunflower' , sans-serif;
 }
 
 .hidden {
-	color: #fff;
-	padding-top: 30px;
-	width: 250px;
+	font-size: 55px;
+	padding-top: 40px;
+}
+
+.counter,
+.wins {
+	padding-top: 40px;
+	text-align: center;
+	font-size: 60px;
 }
 
 
