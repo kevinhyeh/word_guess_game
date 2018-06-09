@@ -51,23 +51,13 @@ function hangman(e) {
 
     }
 
-  
+    if (letters.indexOf(key) == -1 && correctLetter.includes(key) == false && key == "Enter") {
+        letters.push(key);
+        document.querySelector(".guesses").innerHTML = document.querySelector(".guesses").innerHTML + key + ", ";
 
-    // document.querySelector(".guesses").innerHTML = letters;
-
-
-
-
-    // counter
-    if (correctLetter.includes(key) == false) {
         num--;
         document.querySelector(".counter").innerHTML = num;
     }
-
-
-    // if (num == 0) {
-
-    // }
 
     if (num == 0) {
         document.querySelector(".hidden").innerHTML = pickedWord;
@@ -77,10 +67,6 @@ function hangman(e) {
         num = 15;
         document.querySelector(".counter").innerHTML = num;
     }
-
-    // if (num == 0) {
-
-    // }
 
     // reset
     if (key == "Enter") {
@@ -92,18 +78,6 @@ function hangman(e) {
         document.querySelector(".guesses").innerHTML = letters;
     }
 
-      // letters guessed
-
-    if (e.keyCode == 32 || key == "Enter" || key == "[" || key == "]") {
-        letters;
-    } else {
-        letters.push(" " + key);
-    }
-
-    if (correctLetter.includes(key) == false) {
-        letters.push(" " + key)
-        document.querySelector(".guesses").innerHTML = key;
-    }
     // you won text
     if (answerArray.join("") == lowerLetter) {
         document.querySelector(".picture").innerHTML = "You Won! Press 'Enter' to keep playing";
