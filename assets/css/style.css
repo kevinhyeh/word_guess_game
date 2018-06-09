@@ -60,12 +60,14 @@ h2 {
 .hidden,
 .counter,
 .wins,
-.guesses {
+.guesses,
+.picture {
 	padding-top: 10px;
 	font-family: 'Sunflower' , sans-serif;
 }
 
-.hidden {
+.hidden,
+.picture {
 	font-size: 55px;
 	padding-top: 40px;
 }
