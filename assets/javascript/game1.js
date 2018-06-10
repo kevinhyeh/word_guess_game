@@ -16,6 +16,7 @@ var num = 15;
 var wins = parseInt(0);
 
 // first page load
+document.querySelector(".picture").innerHTML = "Press any key to start";
 document.querySelector(".counter").innerHTML = num;
 document.querySelector(".wins").innerHTML = wins;
 document.querySelector(".hidden").innerHTML = answerArray.join("");
@@ -54,6 +55,7 @@ function hangman(e) {
 
     }
 
+    // non repeat guessed words
     if (letters.indexOf(key) == -1) {
         letters.push(key);
         document.querySelector(".guesses").innerHTML = document.querySelector(".guesses").innerHTML + key + ", ";
@@ -62,6 +64,7 @@ function hangman(e) {
         document.querySelector(".counter").innerHTML = num;
     }
 
+    // you lost message
     if (num == 0) {
         document.querySelector(".hidden").innerHTML = pickedWord;
         document.querySelector(".picture").innerHTML = "You Lost" + "<br>" + "The word is " + pickedWord + "<br>" + "Press Enter to play again";
@@ -69,6 +72,13 @@ function hangman(e) {
         document.querySelector(".guesses").innerHTML = letters;
         num = 15;
         document.querySelector(".counter").innerHTML = num;
+    }
+
+    // you won message
+    if (answerArray.join("") == lowerLetter) {
+        document.querySelector(".picture").innerHTML = "You Won!" + "<br>" + "Press Enter to play again";
+        wins++;
+        document.querySelector(".wins").innerHTML = wins;
     }
 
     // reset
@@ -79,13 +89,6 @@ function hangman(e) {
         document.querySelector(".counter").innerHTML = num;
         letters.splice(0, letters.length);
         document.querySelector(".guesses").innerHTML = letters;
-    }
-
-    // you won text
-    if (answerArray.join("") == lowerLetter) {
-        document.querySelector(".picture").innerHTML = "You Won!" + "<br>" + "Press Enter to play again";
-        wins++;
-        document.querySelector(".wins").innerHTML = wins;
     }
 
 }
