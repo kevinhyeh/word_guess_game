@@ -10,10 +10,12 @@ for (var i = 0; i < pickedWord.length; i++) {
     answerArray[i] = "-";
 }
 
+// guessed letters and wins/guesses left
 var letters = [];
 var num = 15;
 var wins = parseInt(0);
 
+// first page load
 document.querySelector(".counter").innerHTML = num;
 document.querySelector(".wins").innerHTML = wins;
 document.querySelector(".hidden").innerHTML = answerArray.join("");
@@ -23,6 +25,7 @@ function hangman(e) {
     var rCharacters = pickedWord.length;
     lowerLetter = pickedWord.toLowerCase();
 
+    // different word 
     if (answerArray.join("") == lowerLetter) {
         repeat();
     }
@@ -51,7 +54,7 @@ function hangman(e) {
 
     }
 
-    if (letters.indexOf(key) == -1 && correctLetter.includes(key) == false && key == "Enter") {
+    if (letters.indexOf(key) == -1) {
         letters.push(key);
         document.querySelector(".guesses").innerHTML = document.querySelector(".guesses").innerHTML + key + ", ";
 
@@ -61,7 +64,7 @@ function hangman(e) {
 
     if (num == 0) {
         document.querySelector(".hidden").innerHTML = pickedWord;
-        document.querySelector(".picture").innerHTML = "You Lost!" + "<br>" + "Press 'Enter' to play again";
+        document.querySelector(".picture").innerHTML = "You Lost" + "<br>" + "The word is " + pickedWord + "<br>" + "Press Enter to play again";
         letters.splice(0, letters.length);
         document.querySelector(".guesses").innerHTML = letters;
         num = 15;
@@ -80,7 +83,7 @@ function hangman(e) {
 
     // you won text
     if (answerArray.join("") == lowerLetter) {
-        document.querySelector(".picture").innerHTML = "You Won! Press 'Enter' to keep playing";
+        document.querySelector(".picture").innerHTML = "You Won!" + "<br>" + "Press Enter to play again";
         wins++;
         document.querySelector(".wins").innerHTML = wins;
     }
