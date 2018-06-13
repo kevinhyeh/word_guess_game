@@ -42,7 +42,7 @@ h2 {
 
 .box,
 .end {
-	padding: 0px 0px 60px 10px;
+	padding: 0px 0px 20px 10px;
 	margin: 20px;
 }
 
@@ -59,11 +59,19 @@ h2 {
 
 .hidden,
 .counter,
-.wins,
-.guesses,
-.picture {
+.wins {
 	padding-top: 10px;
 	font-family: 'Sunflower' , sans-serif;
+}
+
+.guesses,
+.message {
+	font-family: 'Fugaz One' , cursive;
+}
+
+.mandp {
+	height: 270px;
+	width: 250px;
 }
 
 .hidden {
@@ -71,13 +79,20 @@ h2 {
 	padding-top: 40px;
 }
 
-.picture {
+.message {
 	font-size: 30px;
+	width: 400px;
+}
+
+.picture {
+	width: 220px;
+	height: 140px;
+	margin-top: 10px;
 }
 
 .counter,
 .wins {
-	padding-top: 40px;
+	padding-top: 20px;
 	text-align: center;
 	font-size: 60px;
 }
